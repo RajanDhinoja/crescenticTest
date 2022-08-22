@@ -1,0 +1,16 @@
+.home {
+  background-color: gray;
+  padding: 5px;
+  .mat-card {
+    margin: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    .header-text {
+      margin-left: -16px;
+    }
+    .img-container {
+      float: left;
+      padding-right: 10px;
+    }
+  }
+}

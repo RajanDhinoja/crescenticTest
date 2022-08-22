@@ -1,0 +1,52 @@
+<div class="dashboard">
+  <button (click)="gotoHome()">Go To Home</button>
+
+  <div class="flex-style">
+    <div class="w-50">
+      <div *ngIf="isNewMovieLoading">
+        <ngx-shimmer-loading [shape]="'rect'" [width]="'600px'" [height]="'800px'"></ngx-shimmer-loading>
+      </div>
+      <div *ngIf="!isNewMovieLoading">
+        <p>Table 1</p>
+        <button class="m-inherit" (click)="reloadNewMovies()">Refresh</button>
+        <mat-card *ngFor="let movie of newMovies">
+          <mat-card-header class="header-text">
+            <mat-card-title>{{ movie.name }}</mat-card-title>
+            <mat-card-subtitle>Temperament: {{ movie.temperament }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="img-container">
+              <img *ngIf="movie.image" class="img-style" [src]="movie.image.url">
+            </div>
+            <div>
+              <span>{{ movie.description }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="w-50">
+      <div *ngIf="isOldMovieLoading">
+        <ngx-shimmer-loading [shape]="'rect'" [width]="'600px'" [height]="'800px'"></ngx-shimmer-loading>
+      </div>
+      <div *ngIf="!isOldMovieLoading">
+        <p>Table 2</p>
+        <button class="m-inherit" (click)="reloadOldMovies()">Refresh</button>
+        <mat-card *ngFor="let movie of oldMovies">
+          <mat-card-header class="header-text">
+            <mat-card-title>{{ movie.name }}</mat-card-title>
+            <mat-card-subtitle>Temperament: {{ movie.temperament }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="img-container">
+              <img *ngIf="movie.image" class="img-style" [src]="movie.image.url">
+            </div>
+            <div>
+              <span>{{ movie.description }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
