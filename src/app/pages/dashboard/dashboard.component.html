@@ -8,7 +8,7 @@
       </div>
       <div *ngIf="!isNewMovieLoading">
         <p>Table 1</p>
-        <button class="m-inherit" (click)="reloadNewMovies()">Refresh</button>
+        <button (click)="reloadNewMovies()">Refresh</button>
         <mat-card *ngFor="let movie of newMovies">
           <mat-card-header class="header-text">
             <mat-card-title>{{ movie.name }}</mat-card-title>
@@ -31,7 +31,7 @@
       </div>
       <div *ngIf="!isOldMovieLoading">
         <p>Table 2</p>
-        <button class="m-inherit" (click)="reloadOldMovies()">Refresh</button>
+        <button (click)="reloadOldMovies()">Refresh</button>
         <mat-card *ngFor="let movie of oldMovies">
           <mat-card-header class="header-text">
             <mat-card-title>{{ movie.name }}</mat-card-title>
